@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-light " id="menu" style="height: 100px">
+  <div class="container-fluid">
+
+    <a class="navbar-brand logo" routerLink="/home" style="margin-left: 50px">
+      <span style="margin-left: 10px">C0222G2 COFFEE</span>
+      <img src="assets/img/baologo1-removebg.png" height="80" alt="logo">
+    </a>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" aria-haspopup="true">
+      <span class="navbar-toggler-icon" style="text-align: end"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 mr-auto justify-content-end" >
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">TRANG CHỦ</a>
+        </li>
+        <li class="nav-item" *ngIf="role === 'ROLE_USER'">
+          <a class="nav-link" routerLink="/order/screen">ĐẶT MÓN</a>
+        </li>
+        <li class="nav-item" *ngIf="role === 'ROLE_STAFF'">
+          <a class="nav-link" routerLink="/order/list">THANH TOÁN</a>
+        </li>
+        <li class="nav-item" *ngIf="role === 'ROLE_ADMIN'">
+          <a class="nav-link" routerLink="/employee" >NHÂN VIÊN</a>
+        </li>
+        <li class="nav-item" *ngIf="role === 'ROLE_ADMIN' || role === 'ROLE_STAFF'">
+          <a class="nav-link" routerLink="/bill">HÓA ĐƠN</a>
+        </li>
+        <li class="nav-item" *ngIf="role === 'ROLE_ADMIN'">
+          <a class="nav-link" routerLink="/dish">QUẢN LÍ MÓN</a>
+        </li>
+        <li class="nav-item" *ngIf="role === 'ROLE_ADMIN'">
+          <a class="nav-link" routerLink="/feedback">ĐÁNH GIÁ</a>
+        </li>
+        <li class="nav-item nav-item-notification" *ngIf="role === 'ROLE_STAFF'">
+          <button class="btn-notification" (click)="showNotificationTable()">
+            <i class="fa-solid fa-bell" style="color: #0000008c"></i>
+            <span class="nav-item-notification-size" *ngIf="notificationNotHandle.length != 0">{{notificationNotHandle.length}}</span>
+          </button>
+          <ul class="notification pt-3 px-3" id="style-2" *ngIf="selected === true">
+              <li *ngFor="let item of notification" class="notification-item m-0 py-2" style="border-bottom: 1px solid black">
+                <!--                <p class="notifi-content m-0">{{item.title}}</p>-->
+                <p class="notifi-content m-0">{{item.body}}</p>
+                <div class="d-flex justify-content-between">
+                  <p class="notifi-content-date m-0">{{item.date | date: 'dd-MM-yyyy'}}</p>
+                  <p class="notifi-content-date m-0">{{item.time}}</p>
+                </div>
+                <div class="notification-status">
+                  <p class="mb-0 mt-2 text-danger" *ngIf="item.status == 'false'"><a [routerLink]="" class="text-danger" style="font-size: 16px !important;" (click)="handleNotification(item.object)">Yêu cầu chưa được xử lý</a></p>
+                  <p class="mb-0 mt-2" *ngIf="item.status == 'true'">Đã xử lý yêu cầu</p>
+                </div>
+
+              </li>
+          </ul>
+        </li>
+        <li class="nav-item" style="" *ngIf="token === ''">
+          <button class="btn btn-light nav-link d-flex align-items-center" style="height: 100%;border: solid 1px; border-radius: 10px" [routerLink]="['/login']">
+            ĐĂNG NHẬP<mat-icon style=" font-size: 150%">account_circle</mat-icon>
+          </button>
+        </li>
+        <!--          <li class="nav-item" style="" *ngIf="token !== ''">-->
+        <!--            <button class="btn btn-light nav-link d-flex align-items-center" style="height: 100%;border: solid 1px; border-radius: 10px" (click)="onLogout()">-->
+        <!--              ĐĂNG XUẤT<mat-icon style=" font-size: 150%">account_circle</mat-icon>-->
+        <!--            </button>-->
+        <!--          </li>-->
+
+        <li class="nav-item dropdown" *ngIf="token !== ''">
+          <button class="btn btn-light nav-link d-flex align-items-center nav-link dropdown-toggle" id="navbarDropdown" role="button" style="height: 100%;border: solid 1px; border-radius: 10px">
+            {{username}}<mat-icon style=" font-size: 150%">account_circle</mat-icon>
+          </button>
+          <ul id="dropdown-menu" class="dropdown-menu dropdown-menu-end" style="background-color: #f8f9fa; right: 0 !important;">
+            <li><a class="dropdown-item" style="font-size: 100%; color: #707071">Chi tiết tài khoản</a></li>
+            <li><button class="dropdown-item" style="font-size: 100%; color: #707071" (click)="onLogout()">Đăng xuất</button></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

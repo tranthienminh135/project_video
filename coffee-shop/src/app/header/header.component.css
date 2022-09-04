@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+  }
+  #menu {
+    background-color: rgba(59, 59, 59, 0.56);
+    transition: 0.4s;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+  #menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 20px;
+    -webkit-transition: padding 2s;
+  }
+
+  #menu a:hover {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #6c5c48;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+
+  #dropdown-menu div:hover {
+    background-color: #afafaf;
+    border-radius: 20px;
+  }
+
+  li {
+    margin: 0 10px 0 10px;
+  }
+
+  .nav-item-notification{
+    position: relative;
+  }
+
+  .notification{
+    width: 300px;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: -100px;
+    border-radius: 5px;
+    list-style: none;
+    height: 400px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+  }
+
+  .notifi-content{
+    font-size: 15px;
+  }
+
+  .notifi-content-date{
+    font-size: 13px;
+  }
+
+  .nav-item-notification-size{
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    background-color: red;
+    color: #ffffff;
+    position: absolute;
+    top: -7px;
+    right: -6px;
+    line-height: 19px;
+    font-size: 13px;
+  }
+
+  .scrollbar{
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 65px;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+  }
+
+  .btn-notification{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+    position: relative;
+  }
+
+  .btn-notification:hover{
+    background-color: #d3d4d5;
+  }
+
+  #style-2::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+
+  #style-2::-webkit-scrollbar{
+    width: 12px;
+    background-color: #F5F5F5;
+  }
+
+  #style-2::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgba(59, 59, 59, 0.56);
+  }
+
+@media only screen and (max-width : 992px) {
+  #navbarSupportedContent {
+    margin-top: 3px;
+    border-radius: 10px;
+    background-color: rgba(59, 59, 59, 0.56);
+  }
+}
+
+@media only screen and (max-height : 500px) {
+  #navbarSupportedContent {
+    margin-top: 3px;
+    border-radius: 10px;
+    background-color: rgba(59, 59, 59, 0.56);
+  }
+}

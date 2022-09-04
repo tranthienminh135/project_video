@@ -1,0 +1,76 @@
+/**
+ * Creator: DiepTT
+ * CSS for Feedback form
+ */
+
+#staticBackdropFeedback {
+  font-family: "Poppins", sans-serif;
+}
+
+.feedback {
+  background: url(src/assets/img/dieptt-bg.jpg);
+}
+
+.feedback-form {
+  width: 80%;
+}
+
+.feedback .modal-title {
+  font-family: 'Bungee', cursive;
+}
+
+.feedback .modal-title{
+  font-size: 28px;
+  color: black;
+}
+
+.feedback-form div label {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.feedback-form div a,
+.feedback-form div button {
+  font-size: 15px;
+  font-weight: lighter;
+  font-family: 'Bungee', cursive;
+}
+
+.feedback-form div div input,
+.feedback-form div div textarea{
+  color: black !important;
+  font-weight: normal !important;
+  font-family: "Poppins", sans-serif;
+}
+.feedback label {
+  padding: 7px 2px;
+}
+
+.feedback label sup {
+  font-family: 'Bungee', cursive;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.bi-star-fill {
+  color: #363535;
+  text-align: center;
+  font-size: 25px;
+  margin-left: 3px;
+  margin-right: 5px;
+}
+
+.bi-star-fill:hover {
+  color: orange !important;
+}
+
+.error {
+  font-size: 12px;
+  margin-left: 3px;
+  margin-top: 5px;
+  font-family: "Poppins", sans-serif ;
+}
+.modal-footer{
+  padding-right: 0px;
+}
